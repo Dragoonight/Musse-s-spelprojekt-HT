@@ -18,92 +18,127 @@ namespace Musse_spelprojekt_HT
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        //olika GameStates
+        //This is the variable for all the GameStates that i will use
         enum GameStates
         {
             TitleScreen, levelselect, Tutorial, complete1, complete2, GameOver, Credits, Victory, Level, level2, level3,
         };
-        //Start Gamestate
+        //This is the variable for Start Gamestate
         GameStates gameState = GameStates.TitleScreen;
-        //Titlescreen image 
+        //This is the variable for Titlescreen image 
         Texture2D TitleScreenImage;
 
-        //Level select image
+        //This is the variable for Level select image
         Texture2D LevelSelectImage;
-        
-        //Tutorial image 
+
+        //This is the variable for Tutorial image 
         Texture2D TutorialImage;
         
         //Credits image 
         Texture2D CreditsImage;
-        
-        //Complete1 image1
+
+        //This is the variable for Complete1 image1
         Texture2D CompleteImage1;
-        
-        //Complete image2
+
+        //This is the variable for Complete image2
         Texture2D CompleteImage2;
-        
-        //Victory image
+
+        //This is the variable for Victory image
         Texture2D VictoryImage;
-        
-        //Game over Image
+
+        //This is the variable for Game over Image
         Texture2D GameOverImage;
-        
-        //Background Image for game 1
+
+        //This is the variable for Background Image for game 1
         Texture2D BackgroundImage1;
-        
-        //Background Image for game 2
+
+        //This is the variable for Background Image for game 2
         Texture2D BackgroundImage2;
 
-        //Background Image for game 3
+        //This is the variable for Background Image for game 3
         Texture2D BackgroundImage3;
 
-        //Player Sprite
+        //This is the variable for player Sprite
         Texture2D playerSprite;
-        //Player Placering
+        //This is the variable for player Position
         Vector2 playerPosition = new Vector2(400, 300);
-        //This code is for uppdating the player position everytime you choose a level
+        //This is the variable for uppdating the player position everytime you choose a level
         protected Vector2 defaultPlayerPos = new Vector2(375, 275);
 
-        //Ball Image
+        //This is the variable for ball Image
         Texture2D ballSprite;
-        //Ball2 Image
-        Texture2D ballSprite2;
-        //Ball3 Image
-        Texture2D ballSprite3;
-
-        //Ball Position
-        Vector2 ballPosition = new Vector2(400, 45);
-        //Ball2 Position 
-        Vector2 ballPosition2 = new Vector2(140, 140);
-        //Ball2 Position
-        Vector2 ballPosition3 = new Vector2(0, 500);
-
-        //Ball speed
+        //This is the variable for ball Position
+        Vector2 ballPosition = new Vector2(400, 0);
+        //This is the variable for ball speed
         Vector2 ballSpeed = new Vector2(500);
-        //Ball2 speed
+        //This variable is for uppdating the ball position everytime you choose a level
+        protected Vector2 defaultballPos = new Vector2(400,0);
+
+        //This is the variable for ball2 Image
+        Texture2D ballSprite2;
+        //This is the variable for ball2 Position 
+        Vector2 ballPosition2 = new Vector2(140, 0);
+        //This is the variable for ball2 speed
         Vector2 ballSpeed2 = new Vector2(500);
-        //Ball3 speed
+        //This is the variable for uppdating the ball2 position everytime you choose a level
+        protected Vector2 defaultballPos2 = new Vector2(140, 0);
+
+
+        //This is the variable for ball3 Image
+        Texture2D ballSprite3;
+        //This is the variable for ball3 Position
+        Vector2 ballPosition3 = new Vector2(175, 0);
+        //This is the variable for ball3 speed
         Vector2 ballSpeed3 = new Vector2(500);
+        //This is the variable for uppdating the ball3 position everytime you choose a level
+        protected Vector2 defaultballPos3 = new Vector2(175, 0);
 
-        //Font 
-        SpriteFont Pericles21;
 
-        //Life points
-        int playerLife = 3;
-        //Life Position 
+        //This is the variable for ball4 Image
+        Texture2D ballSprite4;
+        //This is the variable for ball4 Position
+        Vector2 ballPosition4 = new Vector2(200, 0);
+        //This is the variable for ball4 speed
+        Vector2 ballSpeed4 = new Vector2(600);
+        //This is the variable for uppdating the ball4 position everytime you choose a level
+        protected Vector2 defaultballPos4 = new Vector2(200, 0);
+
+
+        //This is the variable for ball5 Image
+        Texture2D ballSprite5;
+        //This is the variable for ball5 Position
+        Vector2 ballPosition5 = new Vector2(370, 0);
+        //This is the variable for ball5 speed
+        Vector2 ballSpeed5 = new Vector2(600);
+        //This is the variable for uppdating the ball5 position everytime you choose a level
+        protected Vector2 defaultballPos5 = new Vector2(370, 0);
+
+        //This is the variable for ball6 Image
+        Texture2D ballSprite6;
+        //This is the variable for ball6 Position
+        Vector2 ballPosition6 = new Vector2(320,0);
+        //This is the variable for ball6 speed
+        Vector2 ballSpeed6 = new Vector2(700);
+        //This is the variable for uppdating the ball6 position everytime you choose a level
+        protected Vector2 defaultballPos6 = new Vector2(320, 0);
+
+        //This is the variable for life points
+        int playerLife = 5;
+        //This is the variable for life Position 
         Vector2 lifePosition = new Vector2(390, 60);
-        //This code is for uppdating the life so that you will always have 5 in every gamestate
+        //This is the variable for uppdating the life so that you will always have 5 in every gamestate
         const int defaultPlayerLife = 5;
 
-        //Score
-        int playerScore = 300;
-        //Score Position 
-        Vector2 playerScorePosition = new Vector2(390, 20); 
-        //This is for uppdating the points so that you will always have 30000 in every gamestate            
+        //This is the variable for score
+        int playerScore = 30000;
+        //This is the variable for score Position 
+        Vector2 playerScorePosition = new Vector2(390, 20);
+        //This is the variable for the points so that you will always have 30000 in every gamestate            
         const int defaultPlayerScore = 30000;
-        
-       
+
+        //This is the variable for for Fonts
+        SpriteFont Pericles21;
+
 
         public Game1()
         {
@@ -119,8 +154,11 @@ namespace Musse_spelprojekt_HT
         /// </summary>
         protected override void Initialize()
         {
+            //This is the line of code that will control that the screen's Height is always 600 pixels
             this.graphics.PreferredBackBufferHeight = 600;
+            //This is the line of code that will control that the screen's Width is always 800 pixels
             this.graphics.PreferredBackBufferWidth = 800;
+            //This is the line of code that will control that the changes will apply when the game starts
             this.graphics.ApplyChanges();
             base.Initialize();
         }
@@ -134,52 +172,61 @@ namespace Musse_spelprojekt_HT
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            //Loading upp TitleScreenImage
+            //This is the line of code that will load up Title Screen image
             TitleScreenImage = Content.Load<Texture2D>(@"Images /TitleImage");
 
-            //Loading upp LevelselectImage
+            //This is the line of code that will load up Levelselect image
             LevelSelectImage = Content.Load<Texture2D>(@"Images /LevelSelect");
 
-            //Loading upp Tutorial
+            //This is the line of code that will load up Tutorial image
             TutorialImage = Content.Load<Texture2D>(@"Images /Tutorial");
 
-            //Loading upp Complete1
+            //This is the line of code that will load up Complete1 image
             CompleteImage1 = Content.Load<Texture2D>(@"Images /Completion 1");
 
-            //Loading upp Complete2
+            //This is the line of code that will load up Complete2 image
             CompleteImage2 = Content.Load<Texture2D>(@"Images /Completion 2");
 
-            //Loading upp Credits
+            //This is the line of code that will load up Credit image
             CreditsImage = Content.Load<Texture2D>(@"Images /Credits");
 
-            //Loading upp Game over
+            //This is the line of code that will load up Game over image
             GameOverImage = Content.Load<Texture2D>(@"Images /Game Over");
 
-            //Loading upp Victory
+            //This is the line of code that will load up Victory
             VictoryImage = Content.Load<Texture2D>(@"Images /Victory");
 
-            //Loading upp Level1
+            //This is the line of code that will load up Level1
             BackgroundImage1 = Content.Load<Texture2D>(@"Images /LevelImage");
 
-            //Loading upp Level2
+            //This is the line of code that will load up Level2
             BackgroundImage2 = Content.Load<Texture2D>(@"Images /Level2Image");
 
-            //Loading upp Level3
+            //This is the line of code that will load up Level3
             BackgroundImage3 = Content.Load<Texture2D>(@"Images /Level3Image");
 
-            //Load Font for life and Score
+            //This is the line of code that will load up fonts for life and score
             Pericles21 = Content.Load<SpriteFont>(@"Fonts/Pericles21");
 
-            //Loading upp Ball Image
+            //This is the line of code that will load up ball image
             ballSprite = Content.Load<Texture2D>(@"Images/Ball1");
 
-            //Loading upp Ball Image
+            //This is the line of code that will load up ball2 image
             ballSprite2 = Content.Load<Texture2D>(@"Images/Ball2");
 
-            //Loading upp Ball Image
+            //This is the line of code that will load up ball3 image
             ballSprite3 = Content.Load<Texture2D>(@"Images/Ball3");
 
-            //Load player sprite image
+            //This is the line of code that will load up ball4 image
+            ballSprite4 = Content.Load<Texture2D>(@"Images/Ball4");
+
+            //This is the line of code that will load up ball5 image
+            ballSprite5 = Content.Load<Texture2D>(@"Images/Ball5");
+
+            //This is the line of code that will load up ball6 image
+            ballSprite6 = Content.Load<Texture2D>(@"Images/Ball6");
+
+            //This is the line of code that will load up sprite image
             playerSprite = Content.Load<Texture2D>(@"Images/Player");
         }
 
@@ -199,59 +246,108 @@ namespace Musse_spelprojekt_HT
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            //Allows game to exit 
+            //This is the line of code that uppdates that the keyboard is in use 
             GamePadState gamePad = GamePad.GetState(PlayerIndex.One);
             KeyboardState keyboard = Keyboard.GetState();
-            //Back or Escape exits the game
+
+            //This is the line of code that will control that the escape button exits the game
             if (gamePad.Buttons.Back == ButtonState.Pressed ||
                 keyboard.IsKeyDown(Keys.Escape)) this.Exit();
-            // TODO: Add your update logic here
-            // Press F to toggle full-screen mode
+
+            // This is the line of code that will control that pressing F to toggle full-screen mode
             if (keyboard.IsKeyDown(Keys.F))
             {
                 graphics.IsFullScreen = !graphics.IsFullScreen;
                 graphics.ApplyChanges();
             }
-            
-            
-            //Controlling the ball collision
+
+
+            //This is the line of code that will control the ball collision
             Rectangle ballRect = new Rectangle((int)ballPosition.X, (int)ballPosition.Y, ballSprite.Width, ballSprite.Height);
-            //Controlling the ball2 collision
+
+            //This is the line of code that will control the ball2 collision
             Rectangle ballRect2 = new Rectangle((int)ballPosition2.X, (int)ballPosition2.Y, ballSprite2.Width, ballSprite2.Height);
-            //Controlling the ball3 collision
+
+            //This is the line of code that will control ball3 collision
             Rectangle ballRect3 = new Rectangle((int)ballPosition3.X, (int)ballPosition3.Y, ballSprite3.Width, ballSprite3.Height);
-            //Controlling the height and widht the player
+
+            //This is the line of code that will control ball4 collision
+            Rectangle ballRect4 = new Rectangle((int)ballPosition.X, (int)ballPosition.Y, ballSprite.Width, ballSprite.Height);
+
+            //This is the line of code that will control ball5 collision
+            Rectangle ballRect5 = new Rectangle((int)ballPosition.X, (int)ballPosition.Y, ballSprite.Width, ballSprite.Height);
+
+            //This is the line of code that will control ball6 collision
+            Rectangle ballRect6 = new Rectangle((int)ballPosition.X, (int)ballPosition.Y, ballSprite.Width, ballSprite.Height);
+
+
+            //This is the line of code that will control the height and widht the player
             Rectangle playerRect = new Rectangle((int)playerPosition.X, (int)playerPosition.Y, playerSprite.Width, playerSprite.Height);
 
+            //This is the line of code that will control the score goes down
             playerScore -= gameTime.ElapsedGameTime.Milliseconds;
 
-            //This is the code för the player when it loses life to the ball
+            //This is the line of code that controls that when the player intersect with ball the respective things will happen
             if (playerRect.Intersects(ballRect) && playerLife > 0)
             {
+                //This is the line of code that will control the player looses a life to ball if it intercepts with it 
                 playerLife--;
-                ballPosition.X = 200;
+                //This is the line of code that will control that the ball goes to it's respective position
+                ballPosition.X = 400;
                 ballPosition.Y = 0;
             }
 
-            //This is the code from Titlescreen to Game over
+            //This is the line of code that controls that when the player intersect with ball2 the respective things will happen
             if (playerRect.Intersects(ballRect2) && playerLife > 0)
             {
-
+                //This is the line of code that will control that the player looses a life to ball2
                 playerLife--;
-                ballPosition2.X = 200;
+                //This is the line of code that will control that the ball2 goes to it's respective position
+                ballPosition2.X = 140;
                 ballPosition2.Y = 0;
-
             }
-            //This is the code from Titlescreen to Game over
+
+            //This is the line of code that controls that when the player intersect with ball3 the respective things will happen
             if (playerRect.Intersects(ballRect3) && playerLife > 0)
             {
+                //This is the line of code that will control that the player looses a life to ball3
                 playerLife--;
-                ballPosition3.X = 200;
+                //This is the line of code that will control that the ball3 goes to it's respective position
+                ballPosition3.X = 175;
                 ballPosition3.Y = 0;
             }
-           
 
-            //if the balls tries to escape the boundaries
+            //This is the line of code that controls that when the player intersect with ball4 the respective things will happen
+            if (playerRect.Intersects(ballRect4) && playerLife > 0)
+            {
+                //This is the line of code that will control that the player looses a life to ball4
+                playerLife--;
+                //This is the line of code that will control that the ball4 goes to it's respective position
+                ballPosition4.X = 200;
+                ballPosition4.Y = 0;
+            }
+
+            //This is the line of code that controls that when the player intersect with ball5 the respective things will happen
+            if (playerRect.Intersects(ballRect5) && playerLife > 0)
+            {
+                //This is the line of code that will control that the player looses a life to ball5
+                playerLife--;
+                //This is the line of code that will control that the ball5 goes to it's respective position
+                ballPosition5.X = 370;
+                ballPosition5.Y = 0;
+            }
+
+            //This is the line of code that controls that when the player intersect with ball6 the respective things will happen
+            if (playerRect.Intersects(ballRect6) && playerLife > 0)
+            {
+                //This is the line of code that will control that the player looses a life to ball6
+                playerLife--;
+                //This is the line of code that will control that the ball6 goes to it's respective position
+                ballPosition6.X = 320;
+                ballPosition6.Y = 0;
+            }
+
+            //This is the line of code checks that the player is within the screen 
             int maxX = graphics.GraphicsDevice.Viewport.Width - playerSprite.Width;
             int maxY = graphics.GraphicsDevice.Viewport.Height - playerSprite.Height;
 
@@ -277,8 +373,16 @@ namespace Musse_spelprojekt_HT
             //move ball3 position and speed depending on the time
             ballPosition3 += ballSpeed3 * (float)gameTime.ElapsedGameTime.TotalSeconds;
 
+            // move ball4 position and speed depending on the time
+            ballPosition4 += ballSpeed4 * (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-            //Uppdatera Players Position/förflyttning
+            // move ball5 position and speed depending on the time
+            ballPosition5 += ballSpeed5 * (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+            // move ball6 position and speed depending on the time
+            ballPosition6 += ballSpeed6 * (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+            //Uppdatera Players Movement
             if (keyboard.IsKeyDown(Keys.Right))
             {
                 playerPosition.X += 7;
@@ -309,13 +413,31 @@ namespace Musse_spelprojekt_HT
             if (ballPosition2.Y > maxY || ballPosition2.Y < 0)
                 ballSpeed2.Y *= -1;
 
-            //Controlls that if the ball hit any of the sides of the window it bounces
+            //Controlls that if the ball3 hit any of the sides of the window it bounces
             if (ballPosition3.X > maxX || ballPosition3.X < 0)
                 ballSpeed3.X *= -1;
             if (ballPosition3.Y > maxY || ballPosition3.Y < 0)
                 ballSpeed3.Y *= -1;
 
-            
+            //Controlls that if the ball4 hit any of the sides of the window it bounces
+            if (ballPosition4.X > maxX || ballPosition4.X < 0)
+                ballSpeed4.X *= -1;
+            if (ballPosition4.Y > maxY || ballPosition4.Y < 0)
+                ballSpeed4.Y *= -1;
+
+            //Controlls that if the ball5 hit any of the sides of the window it bounces
+            if (ballPosition5.X > maxX || ballPosition5.X < 0)
+                ballSpeed5.X *= -1;
+            if (ballPosition5.Y > maxY || ballPosition5.Y < 0)
+                ballSpeed5.Y *= -1;
+
+            //Controlls that if the ball6 hit any of the sides of the window it bounces
+            if (ballPosition6.X > maxX || ballPosition6.X < 0)
+                ballSpeed6.X *= -1;
+            if (ballPosition6.Y > maxY || ballPosition6.Y < 0)
+                ballSpeed6.Y *= -1;
+
+
 
             //This is the code for the different gamestates that the has 
             switch (gameState)
@@ -682,8 +804,14 @@ namespace Musse_spelprojekt_HT
                 spriteBatch.Draw(playerSprite, playerPosition, Color.White);
 
                 spriteBatch.Draw(ballSprite, ballPosition, Color.White);
+
                 spriteBatch.Draw(ballSprite2, ballPosition2, Color.White);
+
                 spriteBatch.Draw(ballSprite3, ballPosition3, Color.White);
+
+                spriteBatch.Draw(ballSprite4, ballPosition4, Color.White);
+
+                spriteBatch.Draw(ballSprite5, ballPosition5, Color.White);
 
                 spriteBatch.DrawString(Pericles21, playerLife.ToString(), lifePosition, Color.Pink);
                 spriteBatch.DrawString(Pericles21, playerScore.ToString(), playerScorePosition, Color.Red);
@@ -701,9 +829,17 @@ namespace Musse_spelprojekt_HT
                 spriteBatch.Draw(playerSprite, playerPosition, Color.White);
 
                 spriteBatch.Draw(ballSprite, ballPosition, Color.White);
+
                 spriteBatch.Draw(ballSprite2, ballPosition2, Color.White);
+
                 spriteBatch.Draw(ballSprite3, ballPosition3, Color.White);
 
+                spriteBatch.Draw(ballSprite4, ballPosition4, Color.White);
+
+                spriteBatch.Draw(ballSprite5, ballPosition5, Color.White);
+
+                spriteBatch.Draw(ballSprite6, ballPosition6, Color.White);
+                
                 spriteBatch.DrawString(Pericles21, playerLife.ToString(), lifePosition, Color.Pink);
                 spriteBatch.DrawString(Pericles21, playerScore.ToString(), playerScorePosition, Color.Red);
                 
