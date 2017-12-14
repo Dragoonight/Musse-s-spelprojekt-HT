@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Musse_spelprojekt_HT", "Musse_spelprojekt_HT\Musse_spelprojekt_HT\Musse_spelprojekt_HT.csproj", "{00FB70BD-23F1-4353-91C1-CB1ED26C262C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Musse_spelprojekt_HTContent", "Musse_spelprojekt_HT\Musse_spelprojekt_HTContent\Musse_spelprojekt_HTContent.contentproj", "{92EA95B2-5CFD-45B8-91F9-015AAE0CBA72}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{00FB70BD-23F1-4353-91C1-CB1ED26C262C}.Debug|x86.ActiveCfg = Debug|x86
+		{00FB70BD-23F1-4353-91C1-CB1ED26C262C}.Debug|x86.Build.0 = Debug|x86
+		{00FB70BD-23F1-4353-91C1-CB1ED26C262C}.Release|x86.ActiveCfg = Release|x86
+		{00FB70BD-23F1-4353-91C1-CB1ED26C262C}.Release|x86.Build.0 = Release|x86
+		{92EA95B2-5CFD-45B8-91F9-015AAE0CBA72}.Debug|x86.ActiveCfg = Debug|x86
+		{92EA95B2-5CFD-45B8-91F9-015AAE0CBA72}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
